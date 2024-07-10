@@ -8,11 +8,11 @@ You will learn about:
 
 This workshop can be delivered in 8 hours. It has 5 sessions(some sessions can be made optional based on customer scenarios)  and 3 labs.
 
-****Session 1 - Azure AI product family and API/Model Choice:**
+**Session 1 - Azure AI product family and API/Model Choice:**
 Provides an overview of Azure AI product family and help identify the best AI services and models for Customer's use case
 Followed by Lab 1
 
-******Session 2 - Complete AI Toolchain:****
+**Session 2 - Complete AI Toolchain:**
 Access collaborative, comprehensive tooling to support the development lifecycle and differentiate your apps including tools to ground models, orchestrate and debug AI workflows, model evaluations
 Followed by Lab 2
 
