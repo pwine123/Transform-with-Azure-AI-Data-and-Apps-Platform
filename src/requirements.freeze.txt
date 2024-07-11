@@ -235,3 +235,4 @@ promptflow==1.11.0
 promptflow-rag==0.1.0
 promptflow-evals==0.3.0
 promptflow-tools==1.4.0
+keyrings.alt==5.0.1
