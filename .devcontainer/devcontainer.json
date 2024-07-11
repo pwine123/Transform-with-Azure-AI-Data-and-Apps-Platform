@@ -17,7 +17,8 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-toolsai.jupyter",
-				"ms-azuretools.azure-dev"
+				"ms-azuretools.azure-dev",
+				"prompt-flow.prompt-flow"
 			]
 		}
 	},
