@@ -1,7 +1,7 @@
 import json
 import re
 import requests
-from promptflow import tool
+from promptflow.core import tool
 from promptflow.connections import AzureOpenAIConnection
 from promptflow.connections import CognitiveSearchConnection
 
@@ -189,50 +189,3 @@ def search(queries: str, searchConnection: CognitiveSearchConnection, indexName:
                 if len(includedOutputs) >= topK:
                     break
     return includedOutputs
-
-    if query_type == 'simple':
-        request_payload['search'] = query
-        request_payload['queryType'] = query_type
-    elif query_type == 'semantic':
-        request_payload['search'] = query
-        request_payload['queryType'] = query_type
-        request_payload['semanticConfiguration'] = semantic_configuration_name
-    elif query_type in ('vector', 'vectorSimpleHybrid', 'vectorSemanticHybrid'):
-        if vectorFields and embeddingModelName:
-            query_vectors = get_query_embedding(
-                query,
-                embeddingModelConnection["api_base"],
-                embeddingModelConnection["api_key"],
-                embeddingModelConnection["api_version"],
-                embeddingModelName
-            )
-
-            # Assuming embedding is one of the query_vectors for demonstration
-            embedding = query_vectors[0] if query_vectors else None
-            if embedding:
-                request_payload['vectorQueries'] = [
-                    {
-                        "k": 7,
-                        "fields": "content_vector",
-                        "kind": "vector",
-                        "exhaustive": True,
-                        "vector": embedding
-                    }
-                ]
-
-        if query_type == 'vectorSimpleHybrid':
-            request_payload['search'] = query
-        elif query_type == 'vectorSemanticHybrid':
-            request_payload['search'] = query
-            request_payload['queryType'] = 'semantic'
-            request_payload['semanticConfiguration'] = semantic_configuration_name
-    else:
-        raise Exception(f"unsupported query type: {query_type}")
-    
-    headers = {
-        "Content-Type": "application/json",
-        "api-key": api_key
-    }
-    retrieved_docs = requests.post(request_url, json = request_payload, headers = headers, timeout=None)
-    if retrieved_docs.status_code == 200:
-        return process_search_docs_response(retrieved_docs.json()["value"])

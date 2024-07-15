@@ -1,4 +1,4 @@
-from promptflow import tool
+from promptflow.core import tool
 
 @tool
 def format_retrieved_documents(docs: object, maxTokens: int) -> str:
