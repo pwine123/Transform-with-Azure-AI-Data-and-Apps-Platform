@@ -202,7 +202,7 @@ azure-mgmt-authorization==4.0.0
 azure-mgmt-containerregistry==10.3.0
 azure-mgmt-keyvault==10.3.0
 azure-mgmt-network==25.4.0
-azure-mgmt-resource==23.0.1
+azure-mgmt-resource==22.0.0
 azure-mgmt-storage==21.1.0
 azure-storage-file-datalake==12.14.0
 azure-ai-formrecognizer==3.3.3
@@ -236,3 +236,5 @@ promptflow-rag==0.1.0
 promptflow-evals==0.3.0
 promptflow-tools==1.4.0
 keyrings.alt==5.0.1
+azure-ai-generative[evaluate]==1.0.0b8
+

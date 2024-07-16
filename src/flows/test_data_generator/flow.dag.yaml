@@ -9,31 +9,26 @@ inputs:
   topic:
     type: string
     is_chat_input: true
+    default: dmv
 outputs:
   answer:
     type: string
-    reference: ${test_question_prompt.output}
+    reference: ${generate_qna.output}
     is_chat_output: true
 nodes:
-- name: test_question_prompt
-  type: llm
-  source:
-    type: code
-    path: generate.jinja2
-  inputs:
-    deployment_name: gpt-4o
-    max_tokens: 1000
-    temperature: 0
-    response_format:
-      type: json_object
-    topic: ${inputs.topic}
-    num: "25"
-  connection: Default_AzureOpenAI
-  api: chat
-- name: write_dataset
+- name: generate_qna
   type: python
   source:
     type: code
-    path: write_dataset.py
+    path: generate_qna.py
   inputs:
-    question_list_json: ${test_question_prompt.output}
+    aoai_conn: Default_AzureOpenAI
+    aoai_deployment: gpt-4o
+    aisearch_conn: AzureAISearch
+    aisearch_index: dmv-index-full
+    numquestionstotal: 20
+    numquestionspersource: 2
+    outputfile: test_qna_eval.jsonl
+    citationfieldname: filepath
+    topic: ${inputs.topic}
+    aoai_model: gpt-4
