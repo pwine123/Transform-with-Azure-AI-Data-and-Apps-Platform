@@ -147,7 +147,7 @@ To evaluate the performance of your copilot, you can generate a dataset of quest
   - `topic`: The topic for which you want to generate questions.
   - `num_questions`: The number of questions you want to generate.
   - `num_questions_per_doc`: The number of questions you want to generate per document.
-  - `citation_field_name`: The name of the search index you created in Step 3.
+  - `citation_field_name`: The name of the citation field (used by the generator to provide reference to source context) in the search index, created in Step 3.
   - `outputfile`: Name of output jsonl file to be saved.  File saved in the '/output' directory. 
 
 ### Step 4e: Run the test data generator
@@ -176,6 +176,7 @@ To start use a set of ground truth questions and answers to evaluate the perform
 - Open the `model_as_a_judge/flow.dag.yaml` in the Visual Editor.
 - Create a batch run experiment to evaluate the copilot responses against the ground truth data.
 - Select 'Existing Run' to perform the evaluation against the generated answers in step 5
+  - Uncomment the `# data` to provide the qna data set and provide ground_truth inputs to the evaluation promptflow.
 - Configure the inputs to the batch run job:
   - `data`: Name of the test_data jsonl file used. 
   - [fill in fields]
