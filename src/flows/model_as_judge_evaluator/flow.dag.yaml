@@ -1,3 +1,5 @@
+environment:
+  python_requirements_txt: requirements.txt
 inputs:
   question:
     type: string
@@ -51,7 +53,7 @@ nodes:
     type: code
     path: gpt_coherence_prompt.jinja2
   inputs:
-    deployment_name: gpt-35-turbo
+    deployment_name: gpt-4o
     temperature: 0
     top_p: 1
     max_tokens: 1
@@ -89,7 +91,7 @@ nodes:
     type: code
     path: gpt_similarity_prompt.jinja2
   inputs:
-    deployment_name: gpt-35-turbo
+    deployment_name: gpt-4o
     temperature: 0
     top_p: 1
     max_tokens: 1
@@ -113,7 +115,7 @@ nodes:
     type: code
     path: gpt_relevance_prompt.jinja2
   inputs:
-    deployment_name: gpt-35-turbo
+    deployment_name: gpt-4o
     temperature: 0
     top_p: 1
     max_tokens: 1
@@ -137,7 +139,7 @@ nodes:
     type: code
     path: gpt_fluency_prompt.jinja2
   inputs:
-    deployment_name: gpt-35-turbo
+    deployment_name: gpt-4o
     temperature: 0
     top_p: 1
     max_tokens: 1
@@ -173,7 +175,7 @@ nodes:
     type: code
     path: gpt_groundedness_prompt.jinja2
   inputs:
-    deployment_name: gpt-35-turbo
+    deployment_name: gpt-4o
     temperature: 0
     top_p: 1
     max_tokens: 1
@@ -263,6 +265,3 @@ nodes:
     selected_metrics: ${select_metrics.output}
   aggregation: false
   use_variants: false
-node_variants: {}
-environment:
-  python_requirements_txt: requirements.txt

@@ -10,7 +10,6 @@ inputs:
   query:
     type: string
     is_chat_input: true
-    default: where do i apply for a temporary handicap placard?
 outputs:
   reply:
     type: string
