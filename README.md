@@ -1,4 +1,4 @@
-# Transform with Azure AI, Data and Apps Platform![image](https://github.com/user-attachments/assets/8b12f011-b6f3-49d4-932b-cc9797a40c06)
+# Transform with Azure AI, Data and Apps Platform!
 
 Welcome to the AI Platform in a day workshop! In this workshop, we’ll talk about these emerging patterns and show how Azure AI empowers developers to build multi-agent copilot solutions. Discover advanced features such as model selection, debugging tools and security measures for developing intelligent, scalable, and safe AI solutions.
 You will learn about:
