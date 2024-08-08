@@ -1,4 +1,4 @@
-#### Introduction to LLMs, Azure AI Services, Azure AI studio
+# Introduction to LLMs, Azure AI Services, Azure AI studio
 
 In this lab, we will have an overview on how to use Azure AI to work with large language models.
 
