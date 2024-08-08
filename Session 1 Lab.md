@@ -8,6 +8,7 @@ nav_order: 1
 In this lab, we will have an overview on how to use Azure AI to work with large language models.
 
 The focus will be more on an overview of the creation process, so that in the next lessons we will delve deeper into the build, evaluation, deployment, and monitoring process.
+This lab is sourced from https://github.com/microsoft/llmops-workshop/blob/development/labs/lesson_01/lab01.md
 
 #### Prerequisites
 
