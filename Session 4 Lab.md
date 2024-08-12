@@ -26,7 +26,7 @@ Once GraphRAG accelerator is deployed use the following notebook to upload files
 [Setup Notebook](https://github.com/Azure-Samples/graphrag-accelerator/blob/main/notebooks/1-Quickstart.ipynb) 
 
 ## Submit questions to GraphRAG flow
-Open the [graphrag_flow](\src\flows\graphrag_flow), and configure connection to graphrag service.
+Open the [graphrag_flow](https://github.com/pwine123/Transform-with-Azure-AI-Data-and-Apps-Platform/tree/main/src/flows/graphrag_flow), and configure connection to graphrag service.
 
 Configure flow settings and submit `question` to graphrag.
 
