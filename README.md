@@ -26,10 +26,12 @@ Deploy AI innovations to Azure's managed infrastructure with continuous monitori
 **Session 5 - Choose where to build your copilot:**
 Differentiate Copilot Studio, Azure AI studio and AI toolkit for VS code and choose where to build your copilot
 
-![Uploading resource-provider-connected-resources.svg…]()
 
-Diagram showing Azure AI Studio and the scope of use within the environment
-The diagram shows the solution architecture of an AI project within Azure AI Studio. The AI Studio Hub includes the the Azure Subcription, Resource Group, and Azure Content Safety service. The AI Studio Hub provides integration with services including Azure OpenAI, Azure AI Search, and Azure Storage Accounts to implement AI-based solutions. The AI Playground offers tools like Chat Playground, Deployments, and Prompt Flow, that enable get quick and easy access to AI models such as GPT-4 and Llama-2 and interactive development tools.
+**Solution Architecture:**
+![image](https://github.com/user-attachments/assets/b7aa8f76-52f4-424e-94b5-9a153726da59)
+
+The diagram shows the solution architecture of Copilot using RAG(Labs 1-3) within Azure AI Studio. 
+The AI Studio Hub provides integration with services including Azure OpenAI, Azure AI Search, Azure Storage Accounts, Cosmos DB and Content Safety to implement AI-based solutions. The AI Playground offers tools like Chat Playground, Deployments, and Prompt Flow, that enable get quick and easy access to AI models such as GPT-4 and Llama-2 and interactive development tools.
 
 
 
