@@ -12,6 +12,7 @@ You will learn about:
 The diagram shows the solution architecture of Copilot using RAG(Labs 1-3) within Azure AI Studio. 
 The AI Studio Hub provides integration with services including Azure OpenAI, Azure AI Search, Azure Storage Accounts, Cosmos DB and Content Safety to implement AI-based solutions. The AI Playground offers tools like Chat Playground, Deployments, and Prompt Flow, that enable get quick and easy access to AI models such as GPT-4 and Llama-2 and interactive development tools.
 
+# Workshop Agenda:
 This workshop can be delivered in 8 hours. It has 5 sessions(some sessions can be made optional based on customer scenarios)  and 3 labs.
 
 **Session 1 - Azure AI product family and API/Model Choice:**
