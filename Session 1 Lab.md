@@ -8,4 +8,4 @@ We will focus on the following:
 3) Test the prompt in Content Safety.
 4) Create a Prompt Flow flow.
 
-[Lab 1 link](https://github.com/pwine123/Transform-with-Azure-AI-Data-and-Apps-Platform/tree/main/lesson_01)
+[Lab 1 link](https://github.com/pwine123/Transform-with-Azure-AI-Data-and-Apps-Platform/blob/main/lesson_01/lab01.md)
