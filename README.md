@@ -28,7 +28,7 @@ Design and safeguard applications using configurable filters and controls. Confi
 Followed by Lab 3
 
 **Session 4 - Enterprise-grade Production at Scale:**
-Deploy AI innovations to Azure's managed infrastructure with continuous monitoring and governance across environments. How to enterprise scale the deployment using Azure API management
+Deploy AI innovations to Azure's managed infrastructure with continuous monitoring and governance across environments. How to enterprise scale the deployment using Azure API management. Followed by Lab 4 which includes the lab for GraphRAG accelerator
 
 **Session 5 - Choose where to build your copilot:**
 Differentiate Copilot Studio, Azure AI studio and AI toolkit for VS code and choose where to build your copilot
