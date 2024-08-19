@@ -106,13 +106,13 @@ On the screen with the deployment information, select the **Open in playground**
 
 In this lab, we will run an example where the model will help us summarize and extract information from a conversation between a customer and a representative. Use these conversation scripts [Demo Scripts](https://microsoft-my.sharepoint.com/personal/amchapla_microsoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Famchapla%5Fmicrosoft%5Fcom%2FDocuments%2FWorkFolders%2FConversationCopilot%2DMultimodalAI%2DResourcesWW%2FDemo%20Scripts%20and%20Custom%20Prompts&ga=1). Please pick the industry(Banking/Insurance/Cap Mkts) based on your customer.
 
-Copy one of the extraction prompt from Custom Prompt section of the document into the system message field of the playground.
+Copy one of the "extraction prompt from Custom Prompt section of the document" into the system message field of the playground.
 
 After copying, select **Apply changes**
 
-Then copy the conversation script in the chat session and click the send button.
+Then copy the "conversation script" in the chat session and click the send button.
 
-Notice that the model correctly followed the instructions indicated in the System message field:
+Notice that the model correctly followed the instructions indicated in the System message field.
 
 ##### 2) Work with an Open Source LLM Model
 
