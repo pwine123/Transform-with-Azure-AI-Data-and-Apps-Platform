@@ -11,7 +11,21 @@ Following the below steps, you will: set up your development environment, create
 ## Step 1: Az login
 If you haven't already done so, run `az login` to authenticate to Azure in your terminal.
     - Note: if you are running from within a Codespace or the curated VS Code cloud container, you will need to use `az login --use-device-code`
+    
+## (Optional) use Service Principal in GH codespaces
+Steps for creating Service Principal: 
+- [CLI Instructions](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-1?tabs=bash)
+- [Portal Instructions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal)*
+*  Use create new secret option and record secret for later step.
+  
+Ensure the SP has sufficient permissions to deploy the GraphRAG solution. 
+- [Required Permissions](https://github.com/Azure-Samples/graphrag-accelerator/blob/main/docs/DEPLOYMENT-GUIDE.md#rbac-permissions)
 
+
+Use the following az login command using SP:
+```bash
+az login --service-principal -u <app-id> -p <password-or-cert> --tenant <tenant>
+```
 
 ## Step 2: Reference Azure AI resources
 Based on the instructions [here](https://microsoft-my.sharepoint.com/:w:/p/mesameki/Ed5UKepTDSpCpUCwigrxFrsBKMBZrEugqhSrosnz8jtdZQ?e=cudeiv), you already have everything you need. Navigate to your hub and project, click on "Settings" from the left menu, scroll down to "Connected Resource" and click on "View all". We need the information here to fill some of the details of our yaml file below. Open your ./provisioning/provision.yaml file and let's fill it together step by step:
