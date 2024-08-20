@@ -7,9 +7,10 @@ More Info on GraphRAG: [Microsoft Research blog post](https://www.microsoft.com/
 [GraphRAG Accelerator](https://github.com/Azure-Samples/graphrag-accelerator)
 
 ## (Optional) use Service Principal in GH codespaces
-Steps for creating Service Principal : 
+Steps for creating Service Principal: 
 - [CLI Instructions](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-1?tabs=bash)
-- [Portal Instructions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal)
+- [Portal Instructions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal)*
+*  Use create new secret option and record secret for later step.
   
 Ensure the SP has sufficient permissions to deploy the GraphRAG solution. 
 - [Required Permissions](https://github.com/Azure-Samples/graphrag-accelerator/blob/main/docs/DEPLOYMENT-GUIDE.md#rbac-permissions)
