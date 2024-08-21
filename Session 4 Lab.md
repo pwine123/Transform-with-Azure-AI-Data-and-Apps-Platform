@@ -2,6 +2,7 @@
 
 GraphRAG is a state-of-the-art approach to perform Retrieval Augmented Generation utilizing graph database connections to uncover the context and information required to answer user questions.
 More Info on GraphRAG: [Microsoft Research blog post](https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/)
+[GraphRAG repo](https://github.com/microsoft/graphrag?tab=readme-ov-file)
 
 ## Deploy GraphRAG accelerator
 [GraphRAG Accelerator](https://github.com/Azure-Samples/graphrag-accelerator)
