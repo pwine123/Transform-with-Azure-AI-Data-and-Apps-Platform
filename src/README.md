@@ -77,10 +77,6 @@ Once you set up those parameters, run:
 
 The script will check whether the resources you specified exist, otherwise it will create them. It will then construct a .env for you that references the provisioned or referenced resources, including your keys. Once the provisioning is complete, you'll be ready to move to step 3.
 
-## Step 3: Create an index
-
-Our goal is to ground the LLM in our custom data (located in src > indexing > data > product-info). To do this, we will use promptflow to create a search index based on the specified product data.
-
 ### Step 3: Set the index reference
 
 Use your own index and **Once you have the index you want to use, add the below entry to your .env file.** Note that the copilot code relies on this environment variable.
