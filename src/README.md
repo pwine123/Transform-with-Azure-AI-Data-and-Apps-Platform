@@ -81,32 +81,13 @@ The script will check whether the resources you specified exist, otherwise it wi
 
 Our goal is to ground the LLM in our custom data (located in src > indexing > data > product-info). To do this, we will use promptflow to create a search index based on the specified product data.
 
-### Step 3a: Create a new index
+### Step 3: Set the index reference
 
-This step uses vector search with Azure OpenAI embeddings (e.g., ada-002) to encode your documents. First, you need to allow your Azure AI Search resource to access your Azure OpenAI resource in these roles:
-
-    - Cognitive Services OpenAI Contributor
-    - Cognitive Services Contributor
-    - (optionally if you need quota view) Cognitive Services Usages Reader
- 
-Follow instructions on https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/role-based-access-control to add role assignment in your Azure OpenAI resource.
-
-Next, run the following script designed to streamline index creation. It builds the search index locally, and publishes it to your AI Studio project in the cloud.
-
-``` bash
-python -m indexing.build_index --index-name <desired_index_name> --path-to-data=indexing/data/product-info
-```
-
-You can view and use the index you just created on the **Indexes** page of your Azure AI Studio project.
-
-### Step 3b: Set the index reference
-
-NOTE: **Once you have the index you want to use, add the below entry to your .env file.** Note that the copilot code relies on this environment variable.
+Use your own index and **Once you have the index you want to use, add the below entry to your .env file.** Note that the copilot code relies on this environment variable.
 
 ``` text
 AZUREAI_SEARCH_INDEX_NAME=<index-name>
 ```
-
 
 ## Step 4: Run the copilot
 
