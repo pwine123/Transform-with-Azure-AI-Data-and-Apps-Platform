@@ -11,7 +11,21 @@ Following the below steps, you will: set up your development environment, create
 ## Step 1: Az login
 If you haven't already done so, run `az login` to authenticate to Azure in your terminal.
     - Note: if you are running from within a Codespace or the curated VS Code cloud container, you will need to use `az login --use-device-code`
+    
+## (Optional) use Service Principal in GH codespaces
+Steps for creating Service Principal: 
+- [CLI Instructions](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-1?tabs=bash)
+- [Portal Instructions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal)*
+*  Use create new secret option and record secret for later step.
+  
+Ensure the SP has sufficient permissions to deploy the GraphRAG solution. 
+- [Required Permissions](https://github.com/Azure-Samples/graphrag-accelerator/blob/main/docs/DEPLOYMENT-GUIDE.md#rbac-permissions)
 
+
+Use the following az login command using SP:
+```bash
+az login --service-principal -u <app-id> -p <password-or-cert> --tenant <tenant>
+```
 
 ## Step 2: Reference Azure AI resources
 Based on the instructions [here](https://microsoft-my.sharepoint.com/:w:/p/mesameki/Ed5UKepTDSpCpUCwigrxFrsBKMBZrEugqhSrosnz8jtdZQ?e=cudeiv), you already have everything you need. Navigate to your hub and project, click on "Settings" from the left menu, scroll down to "Connected Resource" and click on "View all". We need the information here to fill some of the details of our yaml file below. Open your ./provisioning/provision.yaml file and let's fill it together step by step:
@@ -63,36 +77,13 @@ Once you set up those parameters, run:
 
 The script will check whether the resources you specified exist, otherwise it will create them. It will then construct a .env for you that references the provisioned or referenced resources, including your keys. Once the provisioning is complete, you'll be ready to move to step 3.
 
-## Step 3: Create an index
+### Step 3: Set the index reference
 
-Our goal is to ground the LLM in our custom data (located in src > indexing > data > product-info). To do this, we will use promptflow to create a search index based on the specified product data.
-
-### Step 3a: Create a new index
-
-This step uses vector search with Azure OpenAI embeddings (e.g., ada-002) to encode your documents. First, you need to allow your Azure AI Search resource to access your Azure OpenAI resource in these roles:
-
-    - Cognitive Services OpenAI Contributor
-    - Cognitive Services Contributor
-    - (optionally if you need quota view) Cognitive Services Usages Reader
- 
-Follow instructions on https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/role-based-access-control to add role assignment in your Azure OpenAI resource.
-
-Next, run the following script designed to streamline index creation. It builds the search index locally, and publishes it to your AI Studio project in the cloud.
-
-``` bash
-python -m indexing.build_index --index-name <desired_index_name> --path-to-data=indexing/data/product-info
-```
-
-You can view and use the index you just created on the **Indexes** page of your Azure AI Studio project.
-
-### Step 3b: Set the index reference
-
-NOTE: **Once you have the index you want to use, add the below entry to your .env file.** Note that the copilot code relies on this environment variable.
+Use your own index and **Once you have the index you want to use, add the below entry to your .env file.** Note that the copilot code relies on this environment variable.
 
 ``` text
 AZUREAI_SEARCH_INDEX_NAME=<index-name>
 ```
-
 
 ## Step 4: Run the copilot
 
