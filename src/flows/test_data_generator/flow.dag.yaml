@@ -24,11 +24,12 @@ nodes:
   inputs:
     aoai_conn: Default_AzureOpenAI
     aoai_deployment: gpt-4o
-    aisearch_conn: AzureAISearch
-    aisearch_index: dmv-index-full
+    aisearch_conn: Default_AzureSearch
+    aisearch_index: [index_name]
     numquestionstotal: 20
     numquestionspersource: 2
     outputfile: test_qna_eval.jsonl
-    citationfieldname: filepath
+    citationfieldname: [citation_field_name]
     topic: ${inputs.topic}
     aoai_model: gpt-4
+    content_field_name: [content_field_name]

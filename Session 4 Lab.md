@@ -8,9 +8,10 @@ More Info on GraphRAG: [Microsoft Research blog post](https://www.microsoft.com/
 [GraphRAG Accelerator](https://github.com/Azure-Samples/graphrag-accelerator)
 
 ## (Optional) use Service Principal in GH codespaces
-Steps for creating Service Principal : 
+Steps for creating Service Principal: 
 - [CLI Instructions](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-1?tabs=bash)
-- [Portal Instructions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal)
+- [Portal Instructions](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal)*
+*  Use create new secret option and record secret for later step.
   
 Ensure the SP has sufficient permissions to deploy the GraphRAG solution. 
 - [Required Permissions](https://github.com/Azure-Samples/graphrag-accelerator/blob/main/docs/DEPLOYMENT-GUIDE.md#rbac-permissions)
@@ -29,9 +30,21 @@ Once GraphRAG accelerator is deployed use the following notebook to upload files
 ## Submit questions to GraphRAG flow
 Open the [graphrag_flow](https://github.com/pwine123/Transform-with-Azure-AI-Data-and-Apps-Platform/tree/main/src/flows/graphrag_flow), and configure connection to graphrag service.
 
+#### Create Promptflow GraphRag Connection
+  - Fill in `endpoint` with the GraphRag APIM URL (example: `https://apim.azure-api.net`)
+  - Do not fill in api_key
+
+Run following commands
+```
+cd src/flows/graphrag_flow
+pf connection create -f graphrag_connection.yaml
+```
+
 Configure flow settings and submit `question` to graphrag.
 
 Note - Questions submitted to GraphRAG may take an extended amount of time which may be affected by both size of graph and graph query settings.
+
+
 
 ## (Optional) Perform evaluation against GraphRAG flow
 Use the ground truth questions and answers to evaluate the performance of GraphRAG.  This dataset should span the breadth of topics that your copilot is expected to handle.
