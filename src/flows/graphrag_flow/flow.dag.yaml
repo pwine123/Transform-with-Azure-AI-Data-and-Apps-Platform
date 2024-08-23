@@ -22,5 +22,5 @@ nodes:
     path: graph_global_search.py
   inputs:
     graph_conn: graphrag
-    index_name: sec_docs
+    index_name: [index_name]
     query: ${inputs.question}
