@@ -211,7 +211,7 @@ nodes:
     metrics: ${inputs.metrics}
   aggregation: false
   use_variants: false
-- name: embeded_ground_truth
+- name: embedded_ground_truth
   type: python
   source:
     type: package
@@ -225,7 +225,7 @@ nodes:
     when: ${validate_input.output.ada_similarity}
     is: true
   use_variants: false
-- name: embeded_answer
+- name: embedded_answer
   type: python
   source:
     type: package
@@ -245,8 +245,8 @@ nodes:
     type: code
     path: ada_cosine_similarity_score.py
   inputs:
-    a: ${embeded_ground_truth.output}
-    b: ${embeded_answer.output}
+    a: ${embedded_ground_truth.output}
+    b: ${embedded_answer.output}
   aggregation: false
   activate:
     when: ${validate_input.output.ada_similarity}

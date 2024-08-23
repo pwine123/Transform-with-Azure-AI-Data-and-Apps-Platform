@@ -31,6 +31,7 @@ def generate_test_qa_data(
     num_questions_per_source: int,
     output_file: Path,
     citation_field_name: str,
+    content_field_name: str = "content",
 ):
     logger.info(
         "Generating %d questions total, %d per source, based on search results",
@@ -46,7 +47,7 @@ def generate_test_qa_data(
         if len(qa) > num_questions_total:
             break
         logger.info("Processing search document %s", doc[citation_field_name])
-        text = doc["content"]
+        text = doc["chunk"]
 
         result = qa_generator.generate(
             text=text,
@@ -77,6 +78,7 @@ def my_python_tool(aoai_conn: AzureOpenAIConnection,
     numquestionspersource: int,
     outputfile: str,
     citationfieldname: str,
+    content_field_name: str,
     topic: str) -> str:
     
         openai_config={
@@ -105,6 +107,7 @@ def my_python_tool(aoai_conn: AzureOpenAIConnection,
             num_questions_per_source=numquestionspersource,
             output_file=output_path / outputfile,
             citation_field_name=citationfieldname,
+            content_field_name=content_field_name,
         )
         
         return f"{output_path / outputfile}"

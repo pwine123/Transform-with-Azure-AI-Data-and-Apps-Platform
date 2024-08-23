@@ -99,12 +99,27 @@ Open the Promptflow VSCode extension and navigate to the "Extensions" tab.
   - Click "create connection" near bottom of the file.
     - In the terminal, paste the "api_key" from the Azure OpenAI connection details to securely store the key in your environment.
 
+- #### Alternative Method:
+  - Fill in connection information for [/src/flows/aoai_connection.yaml](/src/flows/aoai_connection.yaml)
+  - Run command in terminal:
+
+  ``` 
+  pf connection create -f aoai_connection.yaml
+  ```
+
 - Click the Create button ("+") next the "Azure Search" connection option.
   - Fill in the following fields:
     - name: "Default_AzureSearch"
     - api_base: "to_replace_with_azure_search_api_endpoint" <-- Replace with your Azure Search endpoint ex: "https://bar.search.windows.net"
     - Click "create connection" near bottom of the file.
     - In the terminal, paste the "api_key" from the Azure OpenAI connection details to securely store the key in your environment.
+
+- #### Alternative Method:
+  - Fill in connection information for [/src/flows/ai_search_connection.yaml](/src/flows/ai_search_connection.yaml)
+  - Run command in terminal:
+  ``` 
+  pf connection create -f ai_search_connection.yaml
+  ```
 
 ### Step 4b: Setup the flow connections
 
@@ -122,6 +137,12 @@ Open the Promptflow VSCode extension and navigate to the "Extensions" tab.
   - Select the "Default_AzureOpenAI" connection you created in the previous step.
   - Select the "chat" api
   - Enter the desired model in the "Deployment" field.
+- Click the Create button ("+") next to the "Azure Search" connection option.
+  - Fill in the following fields:
+    - name: "Default_AzureSearch"
+    - api_base: "to_replace_with_azure_search_api_endpoint" <-- Replace with your Azure Search endpoint ex: "https://bar.search.windows.net"
+  - Click "create connection" near the bottom of the file.
+  - In the terminal, paste the "api_key" from the Azure OpenAI connection details to securely store the key in your environment.
 
 ### Step 4c: Run the copilot
 - Enter a question related to your search index in the "query" field.
@@ -139,6 +160,7 @@ To evaluate the performance of your copilot, you can generate a dataset of quest
   - `num_questions`: The number of questions you want to generate.
   - `num_questions_per_doc`: The number of questions you want to generate per document.
   - `citation_field_name`: The name of the citation field (used by the generator to provide reference to source context) in the search index, created in Step 3.
+  - `content_field_name` : The name of the content field
   - `outputfile`: Name of output jsonl file to be saved.  File saved in the '/output' directory. 
 
 ### Step 4e: Run the test data generator
