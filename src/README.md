@@ -27,6 +27,8 @@ Use the following az login command using SP:
 az login --service-principal -u <app-id> -p <password-or-cert> --tenant <tenant>
 ```
 
+## Note: Step 2 & 3 provisions necessary azure AI resources including Hub, Project, AOAI, AI Search and creates the index. If you have all of these resources created already, you can skip steps 2 & 3 by copying the sample.env file and renaming it as .env file. Update .env file with your resource names. Place .env file under src/ folder. 
+
 ## Step 2: Reference Azure AI resources
 Based on the instructions [here](https://microsoft-my.sharepoint.com/:w:/p/mesameki/Ed5UKepTDSpCpUCwigrxFrsBKMBZrEugqhSrosnz8jtdZQ?e=cudeiv), you already have everything you need. Navigate to your hub and project, click on "Settings" from the left menu, scroll down to "Connected Resource" and click on "View all". We need the information here to fill some of the details of our yaml file below. Open your ./provisioning/provision.yaml file and let's fill it together step by step:
 
@@ -133,16 +135,11 @@ Open the Promptflow VSCode extension and navigate to the "Extensions" tab.
   - Enter the "index_name" of your search index.
   - Select the "Default_AzureOpenAI" connection you created in the previous step.
   - Enter the "embedding_model" of Azure OpenAI deployment.
+  # Note - if you are using your own index, remember to update the fields vectorFields, content_field_name, citation_field_name with equivalent field values from your index. 
 - Select the "DetermineReply" step and click the "Edit" button.
   - Select the "Default_AzureOpenAI" connection you created in the previous step.
   - Select the "chat" api
   - Enter the desired model in the "Deployment" field.
-- Click the Create button ("+") next to the "Azure Search" connection option.
-  - Fill in the following fields:
-    - name: "Default_AzureSearch"
-    - api_base: "to_replace_with_azure_search_api_endpoint" <-- Replace with your Azure Search endpoint ex: "https://bar.search.windows.net"
-  - Click "create connection" near the bottom of the file.
-  - In the terminal, paste the "api_key" from the Azure OpenAI connection details to securely store the key in your environment.
 
 ### Step 4c: Run the copilot
 - Enter a question related to your search index in the "query" field.
