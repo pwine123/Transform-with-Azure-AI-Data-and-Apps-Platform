@@ -27,7 +27,7 @@ Use the following az login command using SP:
 az login --service-principal -u <app-id> -p <password-or-cert> --tenant <tenant>
 ```
 
-## Note: Step 2 & 3 provisions necessary azure AI resources including Hub, Project, AOAI, AI Search and creates the index. If you have all of these resources created already, you can skip steps 2 & 3 by copying the sample.env file and renaming it as .env file. Update .env file with your resource names. Place .env file under src/ folder. 
+Note: Step 2 & 3 provisions necessary azure AI resources including Hub, Project, AOAI, AI Search and creates the index. If you have all of these resources created already, you can skip steps 2 & 3 by copying the sample.env file and renaming it as .env file. Update .env file with your resource names. Place .env file under src/ folder. 
 
 ## Step 2: Reference Azure AI resources
 Based on the instructions [here](https://microsoft-my.sharepoint.com/:w:/p/mesameki/Ed5UKepTDSpCpUCwigrxFrsBKMBZrEugqhSrosnz8jtdZQ?e=cudeiv), you already have everything you need. Navigate to your hub and project, click on "Settings" from the left menu, scroll down to "Connected Resource" and click on "View all". We need the information here to fill some of the details of our yaml file below. Open your ./provisioning/provision.yaml file and let's fill it together step by step:
