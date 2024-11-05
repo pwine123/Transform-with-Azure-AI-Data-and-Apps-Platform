@@ -47,7 +47,7 @@ def generate_test_qa_data(
         if len(qa) > num_questions_total:
             break
         logger.info("Processing search document %s", doc[citation_field_name])
-        text = doc["chunk"]
+        text = doc[content_field_name]
 
         result = qa_generator.generate(
             text=text,
